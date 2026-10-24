@@ -29,6 +29,10 @@ public class BillRestController {
         Bill bill = billRepository.findById(id).get();
         Customer customer = customerServiceRestClient.findCustomerById(bill.getCustomerId());
         bill.setCustomer(customer);
+        bill.getProductItems().forEach(productItem -> {
+            productItem.setProduct(
+                    inventoryServiceRestClient.getProduct(productItem.getProductId()));
+        });
         return bill;
     }
 

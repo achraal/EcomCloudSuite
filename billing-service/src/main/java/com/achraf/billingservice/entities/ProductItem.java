@@ -11,7 +11,7 @@ public class ProductItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private long productId;
+    private String productId;
     private double quantity;
     private double price;
     @ManyToOne @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

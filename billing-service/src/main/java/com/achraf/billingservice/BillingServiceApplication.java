@@ -29,7 +29,10 @@ public class BillingServiceApplication {
     ){
         return args -> {
             List<Long> customersIds = List.of(1L, 2L, 3L);
-            List<Long> productsIds = List.of(1L, 2L, 3L);
+            List<String> productsIds = List.of(
+                    "c0a03b76-50eb-43b1-9a52-2a8d8226f935",
+                    "eb6fa311-57d2-4bab-9572-f79628c2a4f2",
+                    "955956fd-c2cd-4d6a-af0d-2eee4e1e9083");
             customersIds.forEach(clientId -> {
                 Bill bill = new Bill();
                 bill.setCustomerId(clientId);
