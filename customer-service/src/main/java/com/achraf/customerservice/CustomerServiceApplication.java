@@ -1,13 +1,16 @@
 package com.achraf.customerservice;
 
+import com.achraf.customerservice.config.CustomerConfigParams;
 import com.achraf.customerservice.entities.Customer;
 import com.achraf.customerservice.repository.CustomerRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.boot.CommandLineRunner;
 
 @SpringBootApplication
+@EnableConfigurationProperties(CustomerConfigParams.class)
 public class CustomerServiceApplication {
 
     public static void main(String[] args) {
